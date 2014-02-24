@@ -4,7 +4,7 @@
 
 int main()
 {
-	CppUnit::TestRunner runner;
+	CppUnit::TextUi::TestRunner runner;
 	runner.addTest(PostfixExprTestFixture::suite());
 	runner.run();
 	

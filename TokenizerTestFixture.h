@@ -7,7 +7,7 @@
 class TokenizerTestFixture : public CppUnit::TestFixture
 {
 	private:
-	
+		Tokenizer *newTokenizer;
 	public:
 		CPPUNIT_TEST_SUITE(TokenizerTestFixture);
 		CPPUNIT_TEST_SUITE_END();

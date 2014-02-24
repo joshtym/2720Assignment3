@@ -2,7 +2,7 @@
 #define __POSTFIXEXPR_H
 
 #include <string>
-#include "Tokenizer.h"
+//#include "Tokenizer.h"
 
 /// Reponsibility: Evaluating postfix expressions.
 /**

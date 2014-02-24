@@ -35,7 +35,7 @@ class LexicalError : public std::runtime_error
 		                      runtime_error(msg) {};
 		
 		/// Constructs an error object by passing a message
-		explicit LexicalError(const char* msg) : runtime_error {};
+		explicit LexicalError(const char* msg) : runtime_error(msg) {};
 };
 
 #endif

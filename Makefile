@@ -1,9 +1,9 @@
-CFLAGS = =I /usr/include
+CFLAGS = =I /usr/include -std=c++11
 LIBDIR = -L /usr/lib
-LNFLAGS = =lcppunit =ldl
-OBJECTS =
+LNFLAGS = -lcppunit -ldl
+OBJECTS = PostfixExpr.o PostfixExprTestFixture.o testPostfixExpr.o
 
-postFixEvaluator: $(OBJECTS)
+postFixTester: $(OBJECTS)
 	g++ $(LIBDIR) -o $@ $^ $(LNFLAGS)
 	
 %.o : %.cc
@@ -13,4 +13,4 @@ clean:
 	rm -f *.o *~ *% *# .#*
 
 clean-all: clean
-	rm -f postFixEvaluator
+	rm -f postFixTester
