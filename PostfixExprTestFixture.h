@@ -2,7 +2,6 @@
 #define POSTFIXEXPRTESTFIXTURE_H
 
 #include "PostfixExpr.h"
-#include "exceptions.h"
 #include <cppunit/extensions/HelperMacros.h>
 
 class PostfixExprTestFixture : public CppUnit::TestFixture

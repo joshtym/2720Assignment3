@@ -1,5 +1,4 @@
 #include "PostfixExprTestFixture.h"
-#include "exceptions.h"
 #include <iostream>
 
 void PostfixExprTestFixture::setUp()
@@ -14,4 +13,5 @@ void PostfixExprTestFixture::tearDown()
 
 void PostfixExprTestFixture::throwsSyntaxErrorIfMalformed()
 {
+		testPostfixExpr->evaluate("10+4");
 }

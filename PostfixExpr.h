@@ -1,6 +1,7 @@
 #ifndef __POSTFIXEXPR_H
 #define __POSTFIXEXPR_H
 
+#include "exceptions.h"
 #include <string>
 //#include "Tokenizer.h"
 
