@@ -26,7 +26,6 @@ class PostfixExpr
 		 * characters
 		**/
 		double evaluate(std::string expr);
-		static int tester;
 };
 
 #endif
