@@ -13,5 +13,10 @@ void PostfixExprTestFixture::tearDown()
 
 void PostfixExprTestFixture::throwsSyntaxErrorIfMalformed()
 {
-		testPostfixExpr->evaluate("10+4");
+	testPostfixExpr->evaluate("10+4");
+}
+
+void PostfixExprTestFixture::throwsLexicalErrorIfInvalidChar()
+{
+	testPostfixExpr->evaluate("a+b");
 }

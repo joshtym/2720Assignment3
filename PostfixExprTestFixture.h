@@ -13,10 +13,12 @@ class PostfixExprTestFixture : public CppUnit::TestFixture
 		void setUp();
 		void tearDown();
 		void throwsSyntaxErrorIfMalformed();
+		void throwsLexicalErrorIfInvalidChar();
 	
 	public:
 		CPPUNIT_TEST_SUITE(PostfixExprTestFixture);
 		CPPUNIT_TEST_EXCEPTION(throwsSyntaxErrorIfMalformed, SyntaxError);
+		CPPUNIT_TEST_EXCEPTION(throwsLexicalErrorIfInvalidChar, LexicalError);
 		CPPUNIT_TEST_SUITE_END();
 		
 };
