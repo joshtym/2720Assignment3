@@ -7,6 +7,7 @@ A) FOR Tokenizer:
 - Ensure that crtTokenType returns accurate type dependant on received type
 - Ensure that crtTokenValue returns accurate value dependant on received value
 - Ensure that parse determines what the first token is in an expression
+- Ensure that nextToken is able to follow parse and determine exactly what the next token is
 
 B) FOR PostfixExpr:
 - Check to ensure that a syntax error is thrown on a malformed equation

@@ -37,3 +37,9 @@ void TokenizerTestFixture::parseKnowsWhatFirstTokenIsInString()
 	tokenizerTester->parse("10 4 +");
 	CPPUNIT_ASSERT(tokenizerTester->newTokenValues.literalVal == 10);
 }
+
+void TokenizerTestFixture::nextTokenIsDeterimedAfterFirstToken()
+{
+	tokenizerTester->parse("10 4 +");
+	CPPUNIT_ASSERT(tokenizerTester->newTokenValues.literalVal == 4);
+}
