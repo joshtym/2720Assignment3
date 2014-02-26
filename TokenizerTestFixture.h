@@ -15,11 +15,13 @@ class TokenizerTestFixture : public CppUnit::TestFixture
 		void tearDown();
 		void unionHoldsCorrectValuesWhenAssigned();
 		void crtTokenTypeReturnsAccurateReadings();
+		void crtTokenValueReturnsAccurate();
 		
 	public:
 		CPPUNIT_TEST_SUITE(TokenizerTestFixture);
 		CPPUNIT_TEST(unionHoldsCorrectValuesWhenAssigned);
 		CPPUNIT_TEST(crtTokenTypeReturnsAccurateReadings);
+		CPPUNIT_TEST(crtTokenValueReturnsAccurate);
 		CPPUNIT_TEST_SUITE_END();	
 };
 
