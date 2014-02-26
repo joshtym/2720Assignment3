@@ -44,7 +44,7 @@ class Tokenizer
 			 * \param op the value for a operator token
 			**/
 			
-			TokenValue(Operator op) : opVal(op) {};
+			TokenValue(OperatorValue op) : opVal(op) {};
 			/** Constructor allowing the use of TokenValue expressions
 			 * directly as in TokenValue(2.5)
 			 * \param val the value of a token representing a literal
