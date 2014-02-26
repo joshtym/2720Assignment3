@@ -1,4 +1,5 @@
 #include "TokenizerTestFixture.h"
+#include <iostream>
 
 void TokenizerTestFixture::setUp()
 {
@@ -27,6 +28,6 @@ void TokenizerTestFixture::crtTokenTypeReturnsAccurateReadings()
 
 void TokenizerTestFixture::crtTokenValueReturnsAccurate()
 {
-	CPPUNIT_ASSERT(tokenizerTester->crtTokenValue().literalVal == 8.3);
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenValue().literalVal == 8.6);
 	CPPUNIT_ASSERT(tokenizerTester2->crtTokenValue().opVal == Tokenizer::OperatorValue::PLUS);
 }

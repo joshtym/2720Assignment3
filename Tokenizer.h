@@ -96,6 +96,7 @@ class Tokenizer
 		 * value and crtTokenValue returns a undefined value.
 		**/
 		void nextToken();
+		static int count;
 };
 
 #endif
