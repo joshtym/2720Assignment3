@@ -97,6 +97,7 @@ class Tokenizer
 		**/
 		void nextToken();
 		static int count;
+		TokenValue newTokenValues;
 };
 
 #endif

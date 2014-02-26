@@ -3,6 +3,12 @@ Test List
 ------------------------
 
 A) FOR Tokenizer:
-
+- Check that Union assigns and holds proper values
+- Ensure that crtTokenType returns accurate type dependant on received type
+- Ensure that crtTokenValue returns accurate value dependant on received value
+- Ensure that parse determines what the first token is in an expression
 
 B) FOR PostfixExpr:
+- Check to ensure that a syntax error is thrown on a malformed equation
+- Check to ensure that a lexical error is thrown on an equation
+  with illegal characters

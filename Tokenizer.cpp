@@ -5,7 +5,6 @@ int Tokenizer::count = 0;
 
 void Tokenizer::parse(const std::string str)
 {
-				
 }
 
 Tokenizer::Tokens Tokenizer::crtTokenType()

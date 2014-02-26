@@ -16,12 +16,14 @@ class TokenizerTestFixture : public CppUnit::TestFixture
 		void unionHoldsCorrectValuesWhenAssigned();
 		void crtTokenTypeReturnsAccurateReadings();
 		void crtTokenValueReturnsAccurate();
+		void parseKnowsWhatFirstTokenIsInString();
 		
 	public:
 		CPPUNIT_TEST_SUITE(TokenizerTestFixture);
 		CPPUNIT_TEST(unionHoldsCorrectValuesWhenAssigned);
 		CPPUNIT_TEST(crtTokenTypeReturnsAccurateReadings);
 		CPPUNIT_TEST(crtTokenValueReturnsAccurate);
+		CPPUNIT_TEST(parseKnowsWhatFirstTokenIsInString);
 		CPPUNIT_TEST_SUITE_END();	
 };
 
