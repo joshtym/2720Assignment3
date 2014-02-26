@@ -19,4 +19,8 @@ void TokenizerTestFixture::unionHoldsCorrectValuesWhenAssigned()
 	CPPUNIT_ASSERT(tv1.literalVal == 3.6);
 	CPPUNIT_ASSERT(tv2.opVal == Tokenizer::OperatorValue::STAR);
 }
-	
+
+void TokenizerTestFixture::crtTokenTypeReturnsAccurateReadings()
+{
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenType() == Tokenizer::Tokens::LITERAL);
+}
