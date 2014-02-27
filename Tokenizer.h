@@ -67,7 +67,7 @@ class Tokenizer
 		 * first token from this string. Spaces can sbe used to seperate
 		 * tokens when needed.
 		**/
-		void parse(const std::string str);
+		std::vector<std::string> parse(const std::string str);
 		
 		/// Current token type, operator, or literal
 		/**
@@ -75,7 +75,7 @@ class Tokenizer
 		 * parsed. A call to crtTokenType does not consume the token.
 		 * The same token is still available until nextToken is called.
 		**/
-		Tokens crtTokenType();
+		Tokens crtTokenType(const std::string str);
 		
 		/// The value associated with the current token
 		/**
@@ -85,19 +85,19 @@ class Tokenizer
 		 * operator, then the opVal field identifies the operation
 		**/
 		
-		TokenValue crtTokenValue();
+		TokenValue crtTokenValue(const std::string str);
 		
 		/// Reads the next token from the string
 		/**
-		 * The next token from the string is parsed. Deetails about the
+		 * The next token from the string is parsed. Details about the
 		 * new token are made available by the crtToke(Type/Value)
 		 * functions. If there are no more tokens to be processed from
 		 * the string, then crtTokenType returns the Tokens::THEEND
 		 * value and crtTokenValue returns a undefined value.
 		**/
-		void nextToken();
+		int nextToken(const std::string str, int startingPos);
 		static int count;
-		TokenValue newTokenValues;
+		bool lastValWasOperator;
 };
 
 #endif
