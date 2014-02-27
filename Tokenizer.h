@@ -96,8 +96,12 @@ class Tokenizer
 		 * value and crtTokenValue returns a undefined value.
 		**/
 		int nextToken(const std::string str, int startingPos);
+		
+		double convertStringToDouble(const std::string);
 		static int count;
+		
 		bool lastValWasOperator;
+		bool isFloatingPoint;
 };
 
 #endif

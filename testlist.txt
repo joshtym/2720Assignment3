@@ -3,13 +3,16 @@ Test List
 ------------------------
 
 A) FOR Tokenizer:
-- Check that Union assigns and holds proper values
-- Ensure that crtTokenType returns accurate type dependant on received type
-- Ensure that crtTokenValue returns accurate value dependant on received value
-- Ensure that parse determines what the first token is in an expression
-- Ensure that nextToken is able to follow parse and determine exactly what the next token is
+- XCheck that Union assigns and holds proper values
+- XEnsure that crtTokenType returns accurate type dependant on received type
+- XEnsure that crtTokenValue returns accurate value dependant on received value
+- XEnsure that parse determines what the first token is in an expression
+- XEnsure that nextToken is able to follow parse and determine exactly what the next token is
+- Overhaul Tokenizer Class more suited towards development
+- Update all tests to ensure functionality
+- Update tests to be more diverse / work with a greater range of items
 
 B) FOR PostfixExpr:
-- Check to ensure that a syntax error is thrown on a malformed equation
-- Check to ensure that a lexical error is thrown on an equation
+- XCheck to ensure that a syntax error is thrown on a malformed equation
+- XCheck to ensure that a lexical error is thrown on an equation
   with illegal characters
