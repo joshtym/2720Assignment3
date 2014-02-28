@@ -9,10 +9,11 @@ A) FOR Tokenizer:
 - XEnsure that parse determines what the first token is in an expression
 - XEnsure that nextToken is able to follow parse and determine exactly what the next token is
 - XOverhaul Tokenizer Class more suited towards development
-- Update all tests to ensure functionality
-- Update tests to be more diverse / work with a greater range of items
+- XUpdate all tests to ensure functionality
+- XUpdate tests to be more diverse / work with a greater range of items
 
 B) FOR PostfixExpr:
 - XCheck to ensure that a syntax error is thrown on a malformed equation
 - XCheck to ensure that a lexical error is thrown on an equation
   with illegal characters
+- Given a postfix expression, ensure evaluate is able to return the correct value

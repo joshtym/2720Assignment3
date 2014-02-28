@@ -53,3 +53,11 @@ void TokenizerTestFixture::tokenizerSuccessfullyBreaksTokensDown()
 	CPPUNIT_ASSERT(testVector[3] == "39");
 	CPPUNIT_ASSERT(testVector[4] == "-");
 }
+
+void TokenizerTestFixture::tokenizerParsesFloatingPointCorrectly()
+{
+	std::vector<std::string> testVector = tokenizerTester2->parse("28.7563 2736.33802 +");
+	
+	CPPUNIT_ASSERT(testVector[0] == "28.7563");
+	CPPUNIT_ASSERT(testVector[1] == "2736.33802");
+}
