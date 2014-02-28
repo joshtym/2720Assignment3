@@ -3,8 +3,14 @@
 
 double PostfixExpr::evaluate(std::string expr)
 {
+	Tokenizer* tokenizeExpression;
+	tokenizeExpression = new Tokenizer();
 	bool errorAlreadyThrown = false;
+	bool operatorFound = false;
 	int counter = 0;
+	double tempValue1, tempValue2;
+	double finalValue = 0;
+	
 	while (counter < expr.length())
 	{
 		switch (expr[counter])
@@ -68,5 +74,56 @@ double PostfixExpr::evaluate(std::string expr)
 		}
 	}
 	
-	return -1;	
+	counter = 0;
+	int temp;
+	std::vector<std::string> tokenizedExpression;
+	
+	tokenizedExpression = tokenizeExpression->parse(expr);
+	
+	while (counter < tokenizedExpression.size())
+	{
+		operatorFound = false;
+
+		if (tokenizeExpression->crtTokenType(tokenizedExpression[counter]) == Tokenizer::Tokens::OPERATOR)
+			operatorFound = true;
+		while (!operatorFound && counter < tokenizedExpression.size())
+		{
+			counter++;
+			if (tokenizeExpression->crtTokenType(tokenizedExpression[counter]) == Tokenizer::Tokens::OPERATOR)
+				operatorFound = true;
+		}
+		
+		temp = counter;
+		
+		if (operatorFound)
+		{
+			while (tokenizeExpression->crtTokenType(tokenizedExpression[temp]) != Tokenizer::Tokens::LITERAL)
+				temp--;
+			
+			tempValue1 = tokenizeExpression->crtTokenValue(tokenizedExpression[temp]).literalVal;
+			tokenizedExpression[temp] = "a";
+			
+			while(tokenizeExpression->crtTokenType(tokenizedExpression[temp]) != Tokenizer::Tokens::LITERAL)
+				temp--;
+			
+			tempValue2 = tokenizeExpression->crtTokenValue(tokenizedExpression[temp]).literalVal;
+			tokenizedExpression[temp] = "a";
+			
+			if (tokenizedExpression[counter] == "+")
+				finalValue = tempValue2 + tempValue1;
+			else if (tokenizedExpression[counter] == "-")
+				finalValue = tempValue2 - tempValue1;
+			else if (tokenizedExpression[counter] == "*")
+				finalValue = tempValue2 * tempValue1;
+			else
+				finalValue = tempValue2 / tempValue1;
+			
+			tokenizedExpression[counter] = std::to_string(finalValue);
+		}
+		counter++;
+	}
+	
+	delete tokenizeExpression;
+	
+	return finalValue;	
 }
