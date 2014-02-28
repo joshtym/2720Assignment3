@@ -43,3 +43,13 @@ void TokenizerTestFixture::nextTokenIsDeterimedAfterFirstToken()
 	CPPUNIT_ASSERT(tokenizerTester2->parse("10 4 +")[1] == "4");
 }
 
+void TokenizerTestFixture::tokenizerSuccessfullyBreaksTokensDown()
+{
+	std::vector<std::string> testVector = tokenizerTester->parse("13 15 + 39 -");
+	
+	CPPUNIT_ASSERT(testVector[0] == "13");
+	CPPUNIT_ASSERT(testVector[1] == "15");
+	CPPUNIT_ASSERT(testVector[2] == "+");
+	CPPUNIT_ASSERT(testVector[3] == "39");
+	CPPUNIT_ASSERT(testVector[4] == "-");
+}

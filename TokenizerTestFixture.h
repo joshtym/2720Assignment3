@@ -18,6 +18,7 @@ class TokenizerTestFixture : public CppUnit::TestFixture
 		void crtTokenValueReturnsAccurate();
 		void parseKnowsWhatFirstTokenIsInString();
 		void nextTokenIsDeterimedAfterFirstToken();
+		void tokenizerSuccessfullyBreaksTokensDown();
 		
 	public:
 		CPPUNIT_TEST_SUITE(TokenizerTestFixture);
@@ -26,6 +27,7 @@ class TokenizerTestFixture : public CppUnit::TestFixture
 		CPPUNIT_TEST(crtTokenValueReturnsAccurate);
 		CPPUNIT_TEST(parseKnowsWhatFirstTokenIsInString);
 		CPPUNIT_TEST(nextTokenIsDeterimedAfterFirstToken);
+		CPPUNIT_TEST(tokenizerSuccessfullyBreaksTokensDown);
 		CPPUNIT_TEST_SUITE_END();	
 };
 
