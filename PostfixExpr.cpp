@@ -22,7 +22,8 @@ double PostfixExpr::evaluate(std::string expr)
 			case '+': 
 			case '-': 
 			case '*': 
-			case '/': 
+			case '/':
+			case '.': 
 			case ' ':
 				break;
 			default:
@@ -67,6 +68,5 @@ double PostfixExpr::evaluate(std::string expr)
 		}
 	}
 	
-	//Tokenizer tk;
-	//tk.parse(expr);	
+	return -1;	
 }
