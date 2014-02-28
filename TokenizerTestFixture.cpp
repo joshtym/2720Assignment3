@@ -23,23 +23,23 @@ void TokenizerTestFixture::unionHoldsCorrectValuesWhenAssigned()
 
 void TokenizerTestFixture::crtTokenTypeReturnsAccurateReadings()
 {
-	CPPUNIT_ASSERT(tokenizerTester->crtTokenType() == Tokenizer::Tokens::LITERAL);
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenType("30") == Tokenizer::Tokens::LITERAL);
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenType("+") == Tokenizer::Tokens::OPERATOR);
 }
 
 void TokenizerTestFixture::crtTokenValueReturnsAccurate()
 {
-	CPPUNIT_ASSERT(tokenizerTester->crtTokenValue().literalVal == 8.6);
-	CPPUNIT_ASSERT(tokenizerTester2->crtTokenValue().opVal == Tokenizer::OperatorValue::PLUS);
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenValue("8.6").literalVal == 8.6);
+	CPPUNIT_ASSERT(tokenizerTester->crtTokenValue("+").opVal == Tokenizer::OperatorValue::PLUS);
 }
 
 void TokenizerTestFixture::parseKnowsWhatFirstTokenIsInString()
 {
-	tokenizerTester->parse("10 4 +");
-	CPPUNIT_ASSERT(tokenizerTester->newTokenValues.literalVal == 10);
+	CPPUNIT_ASSERT(tokenizerTester->parse("10 4 +")[0] == "10");
 }
 
 void TokenizerTestFixture::nextTokenIsDeterimedAfterFirstToken()
 {
-	tokenizerTester->parse("10 4 +");
-	CPPUNIT_ASSERT(tokenizerTester->newTokenValues.literalVal == 4);
+	CPPUNIT_ASSERT(tokenizerTester2->parse("10 4 +")[1] == "4");
 }
+

@@ -2,6 +2,7 @@
 #define __TOKENIZER_H
 
 #include <string>
+#include <vector>
 
 /// A simple lexical analyzer
 /**
@@ -98,10 +99,9 @@ class Tokenizer
 		int nextToken(const std::string str, int startingPos);
 		
 		double convertStringToDouble(const std::string);
-		static int count;
 		
-		bool lastValWasOperator;
 		bool isFloatingPoint;
+		bool delimiterIsSpace;
 };
 
 #endif

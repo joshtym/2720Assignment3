@@ -2,22 +2,27 @@
 #include <iostream>
 #include <cmath>
 
-int Tokenizer::count = 0;
-
 std::vector<std::string> Tokenizer::parse(const std::string str)
 {
 	int nextDelimiter, currentDelimiter;
 	currentDelimiter = 0;
+	nextDelimiter = 0;
 	std::vector<std::string> expression;
 	
 	bool endOfTokenReached = false;
-	while (nextDelimiter < str.length())
+	while (nextDelimiter < str.length() && currentDelimiter < str.length())
 	{
-		nextDelimiter = nextToken(str, currentDelimitor);
-		expressoin.push_back(str.substr(currentDelimitor, nextDelimiter-currentDelimiter));
+		nextDelimiter = nextToken(str, currentDelimiter);
+		expression.push_back(str.substr(currentDelimiter, nextDelimiter-currentDelimiter));
+		
 		currentDelimiter = nextDelimiter;
 		
+		if (delimiterIsSpace)
+			while (str[currentDelimiter] == ' ')
+				currentDelimiter++;			
 	}
+	
+	return expression;
 }
 
 Tokenizer::Tokens Tokenizer::crtTokenType(const std::string str)
@@ -50,8 +55,6 @@ Tokenizer::TokenValue Tokenizer::crtTokenValue(const std::string str)
 	}
 	else if (crtTokenType(str) == Tokens::LITERAL)
 		return TokenValue(convertStringToDouble(str));
-	else if (crtTokenType(str) == Tokens::UNKNOWN);
-		return TokenValue();
 	else
 		return TokenValue();
 	
@@ -101,18 +104,18 @@ double Tokenizer::convertStringToDouble(const std::string str)
 				value = value * 10 + 9;
 			case '.':
 				decimalIndex = i;
-				isFloatingNumber = true;
+				isFloatingPoint = true;
 				break;
 			default:
 				break;
 		}
 	}
 	
-	if (isFloatingNumber)
+	if (isFloatingPoint)
 	{
 		for (int j = decimalIndex + 1; j < str.length(); j++)
 		{
-			switch (str[i])
+			switch (str[j])
 			{
 				case '1':
 					value = value + (1 / (pow(10, tracker)));
@@ -153,10 +156,59 @@ double Tokenizer::convertStringToDouble(const std::string str)
 				default:
 					tracker++;
 					break;
+			}
+		}
+	}
 	
 	return value;			
 }
 
 int Tokenizer::nextToken(const std::string str, int startingPos)
 {
+	bool valueIsNum, valueIsOperator;
+	
+	if (str[startingPos] == ' ')
+		while (str[startingPos] == ' ')
+			startingPos++;
+		
+	switch(str[startingPos])
+	{
+		case '0':
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9':
+			valueIsNum = true;
+			valueIsOperator = false;
+			break;
+		case '+':
+		case '-':
+		case '/':
+		case '*':
+			valueIsNum = false;
+			valueIsOperator = true;
+			break;
+		default:
+			valueIsNum = false;
+			valueIsOperator = false;
+			break;
+	}
+	
+	if (valueIsNum)
+		while (str[startingPos] != ' ' && str[startingPos] != '+' && str[startingPos] != '-' && str[startingPos] != '*' && str[startingPos] != '/' && startingPos < str.length())
+			startingPos++;
+	else if(valueIsOperator)
+		startingPos++;
+	
+	if (startingPos < str.length() && str[startingPos] == ' ')
+		delimiterIsSpace = true;
+	else
+		delimiterIsSpace = false;
+		
+	return startingPos;	
 }

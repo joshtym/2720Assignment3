@@ -8,7 +8,7 @@ A) FOR Tokenizer:
 - XEnsure that crtTokenValue returns accurate value dependant on received value
 - XEnsure that parse determines what the first token is in an expression
 - XEnsure that nextToken is able to follow parse and determine exactly what the next token is
-- Overhaul Tokenizer Class more suited towards development
+- XOverhaul Tokenizer Class more suited towards development
 - Update all tests to ensure functionality
 - Update tests to be more diverse / work with a greater range of items
 
