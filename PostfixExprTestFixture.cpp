@@ -1,3 +1,13 @@
+// Program Information
+/*
+ * Course: CPSC2720 Spring 2014
+ * Name: Josh Tymburski
+ * Assignment #3
+ * Class Implementation
+ * Professor: Robert  Benkoczi
+ * Program Name: PostfixExprTestFixture.cpp
+ * Software Used: Geany
+*/
 #include "PostfixExprTestFixture.h"
 #include <iostream>
 
