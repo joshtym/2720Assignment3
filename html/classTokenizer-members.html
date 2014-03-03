@@ -81,14 +81,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 This is the complete list of members for <a class="el" href="classTokenizer.html">Tokenizer</a>, including all inherited members.<table>
-  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a635a1188662d891d34ec1b12c5683f17">crtTokenType</a>()</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a54e2ddcadc27ac16a87c313da5d045ed">crtTokenValue</a>()</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a04b524fdf22cc53f9fd40a7d55672161">crtTokenType</a>(const std::string str)</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a46a985c73c5db7fbe21099a892d5e061">crtTokenValue</a>(const std::string str)</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694aa6e35c28d66adb5fff2bb81132025e2d9">LITERAL</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192a311a5757409960be2e419a5405cc0b1a">MINUS</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a5344ae01c4ba5510e75d50ea3267d945">nextToken</a>()</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classTokenizer.html#a4decff9f743d986c14e1741182246fce">nextToken</a>(const std::string str, int startingPos)</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694aa10eb3ba99e5fc62ad197932990ff559b">OPERATOR</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192">OperatorValue</a> enum name</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTokenizer.html#aec5991216062eceb0605863f0281501f">parse</a>(const std::string str)</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="classTokenizer.html#aed0a9e7004fe5a9bbbf92a546355a059">parse</a>(const std::string str)</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192a3639614dfac4b281f342039a9d0b7672">PLUS</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192a06379d1be25b0e589879a19fa0a61ebf">SLASH</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192a8a64f54a3a9f51d2036eba79eebc2f0b">STAR</a> enum value</td><td><a class="el" href="classTokenizer.html">Tokenizer</a></td><td></td></tr>
@@ -113,7 +113,7 @@ This is the complete list of members for <a class="el" href="classTokenizer.html
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 24 2014 21:29:35 for Postfix evaluator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 2 2014 17:41:09 for Postfix evaluator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

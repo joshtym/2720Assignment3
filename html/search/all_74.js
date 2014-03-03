@@ -9,11 +9,13 @@ var searchData=
   ['tokenizer',['Tokenizer',['../classTokenizer.html',1,'']]],
   ['tokenizer_2ecpp',['Tokenizer.cpp',['../Tokenizer_8cpp.html',1,'']]],
   ['tokenizer_2eh',['Tokenizer.h',['../Tokenizer_8h.html',1,'']]],
+  ['tokenizerparsesfloatingpointcorrectly',['tokenizerParsesFloatingPointCorrectly',['../classTokenizerTestFixture.html#a237ab89902a6c44607412572ad44c487',1,'TokenizerTestFixture']]],
+  ['tokenizersuccessfullybreakstokensdown',['tokenizerSuccessfullyBreaksTokensDown',['../classTokenizerTestFixture.html#a9f869d856112fb830cbd804b81abfad8',1,'TokenizerTestFixture']]],
   ['tokenizertestfixture',['TokenizerTestFixture',['../classTokenizerTestFixture.html',1,'']]],
   ['tokenizertestfixture_2ecpp',['TokenizerTestFixture.cpp',['../TokenizerTestFixture_8cpp.html',1,'']]],
   ['tokenizertestfixture_2eh',['TokenizerTestFixture.h',['../TokenizerTestFixture_8h.html',1,'']]],
   ['tokenizertestfixutre_5fh',['TOKENIZERTESTFIXUTRE_H',['../TokenizerTestFixture_8h.html#afad3731f88255e0b7e3b5fefb46c6431',1,'TokenizerTestFixture.h']]],
   ['tokens',['Tokens',['../classTokenizer.html#a1d08c977f18c018363025da487b0694a',1,'Tokenizer']]],
   ['tokenvalue',['TokenValue',['../unionTokenizer_1_1TokenValue.html',1,'Tokenizer']]],
-  ['tokenvalue',['TokenValue',['../unionTokenizer_1_1TokenValue.html#ab4126d94a778a79f72b045e561556ee0',1,'Tokenizer::TokenValue::TokenValue(Operator op)'],['../unionTokenizer_1_1TokenValue.html#ad7185e52a14ffd30aa06acc49d286035',1,'Tokenizer::TokenValue::TokenValue(double val)'],['../unionTokenizer_1_1TokenValue.html#a2a894460d151f4be123f3334397bc703',1,'Tokenizer::TokenValue::TokenValue()']]]
+  ['tokenvalue',['TokenValue',['../unionTokenizer_1_1TokenValue.html#a2097161ea21442c0e59eb418ac5489d2',1,'Tokenizer::TokenValue::TokenValue(OperatorValue op)'],['../unionTokenizer_1_1TokenValue.html#ad7185e52a14ffd30aa06acc49d286035',1,'Tokenizer::TokenValue::TokenValue(double val)'],['../unionTokenizer_1_1TokenValue.html#a2a894460d151f4be123f3334397bc703',1,'Tokenizer::TokenValue::TokenValue()']]]
 ];

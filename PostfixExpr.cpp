@@ -129,7 +129,6 @@ void PostfixExpr::checkValidity (std::string expr)
 	}
 	
 	counter = 0;
-	
 	// Continue on if we haven't already thrown an error
 	if (!errorAlreadyThrown)
 	{
@@ -147,9 +146,11 @@ void PostfixExpr::checkValidity (std::string expr)
 			{
 				while (expr[counter] != ' ' && expr[counter] != '+' && 
 						expr[counter] != '-' && expr[counter] != '*' && 
-						expr[counter] != '/')
+						expr[counter] != '/' && expr[counter] != '\n')
 						{
 							counter++;
+							if (!(counter + 1 < expr.length()))
+								break;
 						}
 					numOfLiterals++;
 			}
@@ -166,7 +167,6 @@ void PostfixExpr::checkValidity (std::string expr)
 		}
 	}
 	counter = 0;
-	
 	// Contine onward if no error has been thrown
 	if (!errorAlreadyThrown)
 	{

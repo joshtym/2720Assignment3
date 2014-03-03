@@ -112,14 +112,14 @@ Public Types</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifiers for the three different operators recognized.  <a href="classTokenizer.html#a264333bd264dbf798e493c04d0ecf192">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#aec5991216062eceb0605863f0281501f">parse</a> (const std::string str)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Call to specify the string to be parsed.  <a href="#aec5991216062eceb0605863f0281501f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694a">Tokens</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a635a1188662d891d34ec1b12c5683f17">crtTokenType</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Current token type, operator, or literal.  <a href="#a635a1188662d891d34ec1b12c5683f17"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionTokenizer_1_1TokenValue.html">TokenValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a54e2ddcadc27ac16a87c313da5d045ed">crtTokenValue</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The value associated with the current token.  <a href="#a54e2ddcadc27ac16a87c313da5d045ed"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a5344ae01c4ba5510e75d50ea3267d945">nextToken</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the next token from the string.  <a href="#a5344ae01c4ba5510e75d50ea3267d945"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#aed0a9e7004fe5a9bbbf92a546355a059">parse</a> (const std::string str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Call to specify the string to be parsed.  <a href="#aed0a9e7004fe5a9bbbf92a546355a059"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694a">Tokens</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a04b524fdf22cc53f9fd40a7d55672161">crtTokenType</a> (const std::string str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Current token type, operator, or literal.  <a href="#a04b524fdf22cc53f9fd40a7d55672161"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="unionTokenizer_1_1TokenValue.html">TokenValue</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a46a985c73c5db7fbe21099a892d5e061">crtTokenValue</a> (const std::string str)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The value associated with the current token.  <a href="#a46a985c73c5db7fbe21099a892d5e061"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTokenizer.html#a4decff9f743d986c14e1741182246fce">nextToken</a> (const std::string str, int startingPos)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines next delimiter in the expression.  <a href="#a4decff9f743d986c14e1741182246fce"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A simple lexical analyzer. </p>
@@ -188,14 +188,15 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a635a1188662d891d34ec1b12c5683f17"></a><!-- doxytag: member="Tokenizer::crtTokenType" ref="a635a1188662d891d34ec1b12c5683f17" args="()" -->
+<a class="anchor" id="a04b524fdf22cc53f9fd40a7d55672161"></a><!-- doxytag: member="Tokenizer::crtTokenType" ref="a04b524fdf22cc53f9fd40a7d55672161" args="(const std::string str)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694a">Tokens</a> <a class="el" href="classTokenizer.html#a635a1188662d891d34ec1b12c5683f17">Tokenizer::crtTokenType</a> </td>
+          <td class="memname"><a class="el" href="classTokenizer.html#a1d08c977f18c018363025da487b0694a">Tokenizer::Tokens</a> <a class="el" href="classTokenizer.html#a04b524fdf22cc53f9fd40a7d55672161">Tokenizer::crtTokenType</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -203,18 +204,19 @@ Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Current token type, operator, or literal. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>a Tokens enum value representing the type of token parsed. A call to crtTokenType does not consume the token. The same token is still available until nextToken is called. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a Tokens enum value representing the type of token parsed. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a54e2ddcadc27ac16a87c313da5d045ed"></a><!-- doxytag: member="Tokenizer::crtTokenValue" ref="a54e2ddcadc27ac16a87c313da5d045ed" args="()" -->
+<a class="anchor" id="a46a985c73c5db7fbe21099a892d5e061"></a><!-- doxytag: member="Tokenizer::crtTokenValue" ref="a46a985c73c5db7fbe21099a892d5e061" args="(const std::string str)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="unionTokenizer_1_1TokenValue.html">TokenValue</a> <a class="el" href="classTokenizer.html#a54e2ddcadc27ac16a87c313da5d045ed">Tokenizer::crtTokenValue</a> </td>
+          <td class="memname"><a class="el" href="unionTokenizer_1_1TokenValue.html">Tokenizer::TokenValue</a> <a class="el" href="classTokenizer.html#a46a985c73c5db7fbe21099a892d5e061">Tokenizer::crtTokenValue</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -226,31 +228,42 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a5344ae01c4ba5510e75d50ea3267d945"></a><!-- doxytag: member="Tokenizer::nextToken" ref="a5344ae01c4ba5510e75d50ea3267d945" args="()" -->
+<a class="anchor" id="a4decff9f743d986c14e1741182246fce"></a><!-- doxytag: member="Tokenizer::nextToken" ref="a4decff9f743d986c14e1741182246fce" args="(const std::string str, int startingPos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTokenizer.html#a5344ae01c4ba5510e75d50ea3267d945">Tokenizer::nextToken</a> </td>
+          <td class="memname">int <a class="el" href="classTokenizer.html#a4decff9f743d986c14e1741182246fce">Tokenizer::nextToken</a> </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startingPos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Reads the next token from the string. </p>
-<p>The next token from the string is parsed. Deetails about the new token are made available by the crtToke(Type/Value) functions. If there are no more tokens to be processed from the string, then crtTokenType returns the Tokens::THEEND value and crtTokenValue returns a undefined value. </p>
+<p>Determines next delimiter in the expression. </p>
+<p>The string is evaluated from it's last delimiter and the next position of the delimiter is evaluated. and returned so that the actual parsing function can parse what the next token will be </p>
 
 </div>
 </div>
-<a class="anchor" id="aec5991216062eceb0605863f0281501f"></a><!-- doxytag: member="Tokenizer::parse" ref="aec5991216062eceb0605863f0281501f" args="(const std::string str)" -->
+<a class="anchor" id="aed0a9e7004fe5a9bbbf92a546355a059"></a><!-- doxytag: member="Tokenizer::parse" ref="aed0a9e7004fe5a9bbbf92a546355a059" args="(const std::string str)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classTokenizer.html#aec5991216062eceb0605863f0281501f">Tokenizer::parse</a> </td>
+          <td class="memname">std::vector&lt; std::string &gt; <a class="el" href="classTokenizer.html#aed0a9e7004fe5a9bbbf92a546355a059">Tokenizer::parse</a> </td>
           <td>(</td>
           <td class="paramtype">const std::string&#160;</td>
           <td class="paramname"><em>str</em></td><td>)</td>
@@ -263,15 +276,16 @@ Public Member Functions</h2></td></tr>
 <p>Call to specify the string to be parsed. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>the string that will be parsed. After the call, the crtToken(Type/Value) functions are initialized to the first token from this string. Spaces can sbe used to seperate tokens when needed. </td></tr>
+    <tr><td class="paramname">str</td><td>the string that will be parsed. After the call, the string will be successfully broken down into it's tokens and stored in the vector that will be returned by utilizing the other functions. This is done by determining possible delimiteres that would fall in a post fix expression. IE, if the current value is a number, then a delimiter will consist of either a space or an operator. If it is an operator, than the delimiter consists of a space, number, or another operator </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="Tokenizer_8h_source.html">Tokenizer.h</a></li>
+<li><a class="el" href="Tokenizer_8cpp.html">Tokenizer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- window showing the filter options -->
@@ -291,7 +305,7 @@ Public Member Functions</h2></td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 24 2014 21:29:35 for Postfix evaluator by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Mar 2 2014 17:41:09 for Postfix evaluator by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.7.6.1
 </small></address>

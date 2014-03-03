@@ -12,16 +12,21 @@
 #include <fstream>
 #include <iostream>
 
-// Prototype Helper Function to assist in processing the string
+/// Prototype Function to help process the string
 void processExpression(std::string);
 
+/// Main Function
 int main()
 {
 	// Variable Declarions
 	std::string expression, fileName, choice;
 	std::ifstream inFile;
 	
-	// Introduction to the Program
+	/**
+	 * Introduction to the program
+	 * Gives a layout of where to head to to understand how
+	 * to best utilize this specific program
+	**/
 	std::cout << "*************************************************";
 	std::cout << std::endl;
 	std::cout << "Welcome to the Postfix Evaluator Program. Please view";
@@ -66,7 +71,12 @@ int main()
 	
 	return 0;
 }
-	
+
+/// Function Definition
+/** 
+ * Does the actual processesing by using exceptions to catch bad
+ * equations. Evaluates expressions and prints to screen
+**/
 void processExpression(std::string givenExpression)
 {
 	// Local Variables
