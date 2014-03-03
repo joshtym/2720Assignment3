@@ -8,7 +8,6 @@
  * Program Name: testPostfixExpr.cpp
  * Software Used: Geany
 */
-#include "PostfixExpr.h"
 #include "PostfixExprTestFixture.h"
 #include <cppunit/ui/text/TestRunner.h>
 

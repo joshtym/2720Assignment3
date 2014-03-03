@@ -1,22 +1,39 @@
+// Program Information
+/*
+ * Course: CPSC2720 Spring 2014
+ * Name: Josh Tymburski
+ * Assignment #3
+ * Class Implementation
+ * Professor: Robert  Benkoczi
+ * Program Name: Tokenizer.cpp
+ * Software Used: Geany
+*/
 #include "Tokenizer.h"
-#include <iostream>
 #include <cmath>
 
 std::vector<std::string> Tokenizer::parse(const std::string str)
 {
+	// Current Variable Declaratoins. Set both delimiters to 0
 	int nextDelimiter, currentDelimiter;
 	currentDelimiter = 0;
 	nextDelimiter = 0;
 	std::vector<std::string> expression;
 	
-	bool endOfTokenReached = false;
+	// Loop through until end of expression
 	while (nextDelimiter < str.length() && currentDelimiter < str.length())
 	{
+		// Using the nextToken function, determine the value of the
+		// position of the next delimiter
 		nextDelimiter = nextToken(str, currentDelimiter);
+		
+		// Once the token is located, push it onto the vector
 		expression.push_back(str.substr(currentDelimiter, nextDelimiter-currentDelimiter));
 		
+		// Assign currentDelimiter to start from nextDelimiter
 		currentDelimiter = nextDelimiter;
 		
+		// Ensure that the delimiter for the next round doesn't
+		// start on white space
 		if (delimiterIsSpace)
 			while (str[currentDelimiter] == ' ')
 				currentDelimiter++;			
@@ -27,6 +44,8 @@ std::vector<std::string> Tokenizer::parse(const std::string str)
 
 Tokenizer::Tokens Tokenizer::crtTokenType(const std::string str)
 {
+	// Pretty self explanatory. If the value equates to one of the known
+	// operators, return it as an operator. Etc. etc
 	if (str[0] == '+' || str[0] == '-' || str[0] == '*' || str[0] == '/')
 		return Tokens::OPERATOR;
 	else if (str[0] == '\n')
@@ -42,6 +61,9 @@ Tokenizer::Tokens Tokenizer::crtTokenType(const std::string str)
 
 Tokenizer::TokenValue Tokenizer::crtTokenValue(const std::string str)
 {
+	// If the value is an operator, then loop through each operator
+	// to determine which one it is and return that value. Ife not,
+	// return a TokenValue with the converted string to double
 	if (crtTokenType(str) == Tokens::OPERATOR)
 	{
 		if (str[0] == '+')
@@ -63,7 +85,7 @@ Tokenizer::TokenValue Tokenizer::crtTokenValue(const std::string str)
 
 double Tokenizer::convertStringToDouble(const std::string str)
 {
-	isFloatingPoint = false;
+	bool isFloatingPoint = false;
 	
 	double value = 0;
 	int decimalIndex = str.length();
@@ -71,6 +93,7 @@ double Tokenizer::convertStringToDouble(const std::string str)
 	
 	for (int i = 0; i < decimalIndex; i++)
 	{
+		// Find the non-decimal part of the number and create it
 		switch (str[i])
 		{
 			case '0':
@@ -111,6 +134,9 @@ double Tokenizer::convertStringToDouble(const std::string str)
 		}
 	}
 	
+	// Only take action if the number is a floating point. Using
+	// the power function, we can ensure that the value is kept
+	// accurate to what the string is
 	if (isFloatingPoint)
 	{
 		for (int j = decimalIndex + 1; j < str.length(); j++)
@@ -167,10 +193,7 @@ int Tokenizer::nextToken(const std::string str, int startingPos)
 {
 	bool valueIsNum, valueIsOperator;
 	
-	if (str[startingPos] == ' ')
-		while (str[startingPos] == ' ')
-			startingPos++;
-		
+	// Determine whether the value is an operator or a number
 	switch(str[startingPos])
 	{
 		case '0':
@@ -199,12 +222,18 @@ int Tokenizer::nextToken(const std::string str, int startingPos)
 			break;
 	}
 	
+	// If it's a number, loop through until we reach a delimiter
 	if (valueIsNum)
-		while (str[startingPos] != ' ' && str[startingPos] != '+' && str[startingPos] != '-' && str[startingPos] != '*' && str[startingPos] != '/' && startingPos < str.length())
-			startingPos++;
+		while (str[startingPos] != ' ' && str[startingPos] != '+' && 
+				str[startingPos] != '-' && str[startingPos] != '*' && 
+				str[startingPos] != '/' && startingPos < str.length())
+				{
+					startingPos++;
+				}
 	else if(valueIsOperator)
 		startingPos++;
 	
+	// Check to ensure we don't get an invalid statement
 	if (startingPos < str.length() && str[startingPos] == ' ')
 		delimiterIsSpace = true;
 	else

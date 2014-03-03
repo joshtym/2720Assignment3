@@ -1,5 +1,14 @@
+// Program Information
+/*
+ * Course: CPSC2720 Spring 2014
+ * Name: Josh Tymburski
+ * Assignment #3
+ * Class Implemenation
+ * Professor: Robert  Benkoczi
+ * Program Name: TokenizerTestFixture.cpp
+ * Software Used: Geany
+*/
 #include "TokenizerTestFixture.h"
-#include <iostream>
 
 void TokenizerTestFixture::setUp()
 {

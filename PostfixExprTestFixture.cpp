@@ -9,7 +9,6 @@
  * Software Used: Geany
 */
 #include "PostfixExprTestFixture.h"
-#include <iostream>
 
 void PostfixExprTestFixture::setUp()
 {

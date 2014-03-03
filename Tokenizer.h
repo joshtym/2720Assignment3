@@ -1,3 +1,13 @@
+// Program Information
+/*
+ * Course: CPSC2720 Spring 2014
+ * Name: Josh Tymburski
+ * Assignment #3
+ * Class Interface
+ * Professor: Robert  Benkoczi
+ * Program Name: Tokenizer.h
+ * Software Used: Geany
+*/
 #ifndef __TOKENIZER_H
 #define __TOKENIZER_H
 
@@ -64,17 +74,21 @@ class Tokenizer
 		/// Call to specify the string to be parsed
 		/**
 		 * \param str the string that will be parsed. After the call,
-		 * the crtToken(Type/Value) functions are initialized to the
-		 * first token from this string. Spaces can sbe used to seperate
-		 * tokens when needed.
+		 * the string will be successfully broken down into it's tokens
+		 * and stored in the vector that will be returned by utilizing
+		 * the other functions. This is done by determining possible
+		 * delimiteres that would fall in a post fix expression. 
+		 * IE, if the current value is a number, then a delimiter will
+		 * consist of either a space or an operator. If it is an
+		 * operator, than the delimiter consists of a space, number, 
+		 * or another operator
 		**/
 		std::vector<std::string> parse(const std::string str);
 		
 		/// Current token type, operator, or literal
 		/**
 		 * \return a Tokens enum value representing the type of token
-		 * parsed. A call to crtTokenType does not consume the token.
-		 * The same token is still available until nextToken is called.
+		 * parsed.
 		**/
 		Tokens crtTokenType(const std::string str);
 		
@@ -88,20 +102,26 @@ class Tokenizer
 		
 		TokenValue crtTokenValue(const std::string str);
 		
-		/// Reads the next token from the string
+		/// Determines next delimiter in the expression
 		/**
-		 * The next token from the string is parsed. Details about the
-		 * new token are made available by the crtToke(Type/Value)
-		 * functions. If there are no more tokens to be processed from
-		 * the string, then crtTokenType returns the Tokens::THEEND
-		 * value and crtTokenValue returns a undefined value.
+		 * The string is evaluated from it's last delimiter and the
+		 * next position of the delimiter is evaluated. and returned
+		 * so that the actual parsing function can parse what the next 
+		 * token will be
 		**/
 		int nextToken(const std::string str, int startingPos);
 		
-		double convertStringToDouble(const std::string);
+		private:
+			/// Converts current string to a double
+			/**
+			 * Takes value of the current string and converts it,
+			 * using a number of methods, to a usuable equivalent
+			 * double value.
+			**/
+			double convertStringToDouble(const std::string);
 		
-		bool isFloatingPoint;
-		bool delimiterIsSpace;
+			// Private data member
+			bool delimiterIsSpace;
 };
 
 #endif
