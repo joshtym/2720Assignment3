@@ -1,6 +1,6 @@
-CFLAGS = -I /usr/include
-CXXFLAGS = -std=c++11
-LIBDIR = -L /usr/lib
+GXX = /opt/centos/devtoolset-1.1/root/usr/bin/g++
+CFLAGS = -I /usr/include -std=c++0x
+LFLAGS = -L /usr/lib
 LNFLAGS = -lcppunit -ldl
 OBJECTS = PostfixExpr.o Tokenizer.o PostfixExprTestFixture.o testPostfixExpr.o
 OBJECTS2 = Tokenizer.o TokenizerTestFixture.o testTokenizer.o
@@ -11,19 +11,19 @@ all: evaluator postFixTester tokenizerTester
 tests: postFixTester tokenizerTester
 
 evaluator: $(OBJECTS3)
-	g++ $(CXXFLAGS) $(LIBDIR) -o $@ $^ $(LNFLAGS)
-	
+	${GXX} $(LFLAGS) -o $@ $^ $(LNFLAGS)
+
 postFixTester: $(OBJECTS)
-	g++ $(CXXFLAGS) $(LIBDIR) -o $@ $^ $(LNFLAGS)
-	
+	${GXX} $(LFLAGS) -o $@ $^ $(LNFLAGS) 
+
 tokenizerTester: $(OBJECTS2)
-	g++ $(CXXFLAGS) $(LIBDIR) -o $@ $^ $(LNFLAGS)
-	
-%.o : %.cc
-	g++ $(CXXFLAGS) $(CFLAGS) -c $^
+	${GXX} $(LFLAGS) -o $@ $^ $(LNFLAGS)  
+
+%.o : %.cpp
+	${GXX} $(CFLAGS) -c $^
 
 clean:
 	rm -f *.o *~ *% *# .#*
 
 clean-all: clean
-	rm -f postFixTester tokenizerTester evaluator
+	rm -f evaluator postFixTester tokenizerTester
