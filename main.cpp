@@ -101,6 +101,7 @@ void processExpression(std::string givenExpression)
 		}
 		catch (const SyntaxError& se)
 		{
+			// Print out error message
 			std::cout << se.what() << std::endl;
 		}
 		catch (const LexicalError& le)
